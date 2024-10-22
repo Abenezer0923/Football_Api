@@ -62,7 +62,12 @@ Access the API documentation at `/api/docs/` (if you have included a documentati
 
 Check out this short video to see the API in action:
 
-[Download Video Demo](/home/abeni/Desktop/django_role_based_app/users/templates/demo.webm)
+# Project Title
+
+## Demo
+
+[Live See on GitHub](https://raw.githubusercontent.com/Abenezer0923/Football_Api/main/users/templates/demo.webm)
+
 
 > **Note**: To view the video, make sure to play it using a compatible video player.
 
