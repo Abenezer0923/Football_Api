@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Agent Dashboard{% endblock %}
+
+{% block content %}
+<h2>Agent Dashboard</h2>
+<!-- Manage player transfers -->
+<a href="{% url 'agent_transfer_player' %}" class="btn btn-success">Transfer Player</a>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Player Name</th>
+            <th>Current Team</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player in players %}
+        <tr>
+            <td>{{ player.id }}</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.current_team }}</td>
+            <td>
+                <a href="{% url 'agent_update_player' player.id %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'agent_delete_player' player.id %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

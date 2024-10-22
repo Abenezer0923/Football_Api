@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Coach Dashboard{% endblock %}
+
+{% block content %}
+<h2>Coach Dashboard</h2>
+<!-- Manage team players -->
+<a href="{% url 'coach_add_player' %}" class="btn btn-success">Add Player</a>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Player Name</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player in players %}
+        <tr>
+            <td>id</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.position }}</td>
+            <td>
+                <a href="{% url 'coach_update_player' player.id %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'coach_delete_player' player.id %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

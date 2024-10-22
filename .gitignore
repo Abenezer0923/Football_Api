@@ -1,0 +1,53 @@
+# Python
+*.py[cod]
+__pycache__/
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Django specific
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.db
+
+# Media files
+/media/
+
+# Static files
+/static/
+
+# Test and coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# Pytest
+.cache
+pytest*.cache
+
+# Migrations
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Other files
+.DS_Store
+Thumbs.db
+
+# Ignore the secret key file
+*.secret
+
+# Ignore files with sensitive information
+secret_key.txt

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<!-- CRUD operations for Admin -->
+<a href="{% url 'admin_create' %}" class="btn btn-success">Create</a>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>
+                <a href="{% url 'admin_update' item.id %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'admin_delete' item.id %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
